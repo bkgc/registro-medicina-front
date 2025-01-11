@@ -1,8 +1,6 @@
-import { Prop } from '@nestjs/mongoose'
 import { ApiProperty } from '@nestjs/swagger'
 import { IsBoolean, IsDate, IsNumber, isString, IsString, minLength, MinLength } from 'class-validator'
-import { Date } from 'mongoose'
-export class CreatePacienteDto {
+export class UpdatePacienteDto {
     @ApiProperty({ required: true })
     @IsString()
     @MinLength(3)
@@ -35,6 +33,6 @@ export class CreatePacienteDto {
     phone: string
     @ApiProperty()
     date: string
-    createAt: Date
+    updateAt: Date
     state: boolean = true
 }

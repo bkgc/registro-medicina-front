@@ -1,7 +1,6 @@
 import { Prop } from '@nestjs/mongoose'
 import { ApiProperty } from '@nestjs/swagger'
 import { IsBoolean, IsDate, IsNumber, isString, IsString, minLength, MinLength } from 'class-validator'
-import { Date } from 'mongoose'
 export class CreatePacienteHistoryDto {
     @ApiProperty()
     fecha: Date

@@ -27,12 +27,9 @@ export class PacienteService {
     async createPacienteHistory(id: string, createHistory: CreatePacienteHistoryDto): Promise<Paciente> {
         const paciente = await this.pacienteModel.findOne({ _id: id })
         if (paciente) {
-            const newHistory = new HistoriaPaciente()
-            newHistory.fecha = new Date()
-            newHistory.hora = 'prueba'
-            paciente.historias.push(newHistory)
+            paciente.historias.push(createHistory);
             await paciente.save();
-            return paciente
+            return paciente;
         }
         else {
             throw new Error('paciente no encontrado')
